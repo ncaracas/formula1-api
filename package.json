@@ -1,5 +1,5 @@
 {
-  "name": "node-blue-boilerplate",
+  "name": "formula1-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,5 +17,11 @@
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
+  },
+  "allowScripts": {
+    "esbuild@0.19.12": true
+  },
+  "dependencies": {
+    "fastify": "^5.12.1"
   }
 }
