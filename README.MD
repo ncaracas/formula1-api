@@ -1,81 +1,119 @@
-<div align="center">
+# Formula 1 API
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+API desenvolvida em Node.js com TypeScript usando Fastify para expor dados de equipes e pilotos da Fórmula 1.
 
-</div>
+## 🚀 Tecnologias utilizadas
 
-<br />
+- Node.js
+- TypeScript
+- Fastify
+- @fastify/cors
+- tsx
+- tsup
+- @types/node
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+Essas ferramentas permitem criar uma API leve, rápida e com suporte ao desenvolvimento em TypeScript.
 
-</div>
+## 📌 Funcionalidades
 
-# 🚀 Technologies
+A API oferece os seguintes endpoints:
 
-This code source was developed with the following items:
+- `GET /teams`
+  - Retorna a lista de equipes da Fórmula 1.
+- `GET /drivers`
+  - Retorna a lista de pilotos.
+- `GET /drivers/:id`
+  - Retorna os dados de um piloto específico pelo ID.
+- CORS habilitado
+  - Permite que a API seja acessada por aplicações frontend em outros domínios.
 
-### 📦 Dependencies
+O servidor fica disponível em:
 
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
+- `http://localhost:3333`
 
-### 📄 Files
+## ✅ Requisitos
 
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
+Antes de instalar, certifique-se de ter instalado em sua máquina:
 
-### ⚡ Scripts
+- Git
+- Node.js v22+
+- npm v11+
 
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
+## 🔧 Passo a passo da instalação
 
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
+1. Clone o repositório:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+git clone <git@github.com:ncaracas/formula1-api.git>
 ```
 
-## Author
+2. Acesse a pasta do projeto:
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+```bash
+cd formula1-api
+```
 
-# Credits
+3. Instale as dependências:
 
-icons by [Pino Lamanna][dribble-icon]
+```bash
+npm install
+```
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+4. Inicie a API em modo de desenvolvimento:
+
+```bash
+npm run start:dev
+```
+
+5. A API estará disponível em:
+
+```bash
+http://localhost:3333
+```
+
+## 🧪 Scripts disponíveis
+
+No arquivo `package.json`, os scripts incluem:
+
+- `npm run dist`
+  - Compila o projeto para a pasta `dist`.
+- `npm run start:dev`
+  - Executa a aplicação em modo de desenvolvimento.
+- `npm run start:watch`
+  - Executa a aplicação com recarga automática quando arquivos mudam.
+- `npm run start:dist`
+  - Compila o projeto e executa a versão pronta em `dist`.
+
+## 📝 Exemplo de uso
+
+### Listar equipes
+
+```bash
+curl http://localhost:3333/teams
+```
+
+### Listar pilotos
+
+```bash
+curl http://localhost:3333/drivers
+```
+
+### Buscar um piloto por ID
+
+```bash
+curl http://localhost:3333/drivers/1
+```
+
+## 📦 Estrutura principal
+
+- `src/server.ts`
+  - Arquivo principal da API
+  - Define os endpoints e os dados em memória
+- `package.json`
+  - Configuração do projeto e scripts
+- `tsconfig.json`
+  - Configuração do TypeScript
+
+## 🎯 Objetivo do projeto
+
+Este projeto foi criado para atender ao desafio final do Bootcamp Sem Parar Corpay - Back-end do Zero a Prática, servindo como uma API simples de consulta sobre Fórmula 1, com dados em memória, ideal para estudo, testes e integração com aplicações frontend.

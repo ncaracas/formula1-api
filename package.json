@@ -1,21 +1,29 @@
 {
-  "name": "node-blue-boilerplate",
+  "name": "formula1-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API minimalista com dados sobre Fórmula 1",
+  "main": "src/server.ts",
   "scripts": {
     "dist": "tsup src",
     "start:dev": "tsx --env-file=.env src/server.ts",
     "start:watch": "tsx watch --env-file=.env  src/server.ts",
-    "start:dist": "npm run dist && node dist/src/index.js"
+    "start:dist": "npm run dist && node dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.30",
-    "tsup": "^8.0.2",
+    "tsup": "^8.5.1",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "fastify": "^5.12.1",
+    "glob": "^13.0.6"
   }
 }
